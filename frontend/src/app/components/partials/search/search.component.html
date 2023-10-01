@@ -1,0 +1,9 @@
+<div class="row height d-flex justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="search-form">
+        <i class="fa fa-search"></i>
+        <input #s type="text" class="form-control search-form-input" placeholder="Search anything..." [(ngModel)]="searchTerm" (keyup.enter)="search(s.value)">
+        <span class="left-pan"><i class="fa fa-microphone"></i></span>
+      </div>
+    </div>
+  </div>

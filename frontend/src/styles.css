@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+.product-display {
+  margin: 10px;
+}
+
+/*search box css*/
+.search-form {
+  position: relative;
+}
+
+.search-form .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af;
+}
+
+.search-form span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+  padding-left: 10px;
+}
+
+.search-form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px;
+}
+
+.search-form-input:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.search-form-input{
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+/*search box css ends*/
