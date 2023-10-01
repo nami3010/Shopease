@@ -1,0 +1,11 @@
+<app-search></app-search>
+<div class="d-flex">
+  <div class="card product-display" *ngFor="let product of products; index as i;" style="width: 18rem;">
+    <img [src]="product.imageUrl" [alt]="product.name" />
+    <div class="card-body">
+      <h5 class="card-title"> {{product.name}}</h5>
+      <p class="card-text"> {{product.name}}</p>
+      <a routerLink="/product/{{product.id}}"></a>
+    </div>
+  </div>
+</div>
