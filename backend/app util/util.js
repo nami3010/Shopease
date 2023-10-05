@@ -1,1 +1,0 @@
-//all common function will be here eg send email,check file type,upload photo
