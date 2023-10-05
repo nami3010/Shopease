@@ -47,15 +47,21 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/assets/vendor/glightbox/css/glightbox.min.css",
+              "src/assets/vendor/nouislider/nouislider.min.css",
+              "src/assets/vendor/choices.js/public/assets/styles/choices.min.css",
+              "src/assets/vendor/swiper/swiper-bundle.min.css",
+              "src/assets/css/style.default.css",
+              "src/assets/css/custom.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/vendor/glightbox/js/glightbox.min.js",
               "src/assets/vendor/nouislider/nouislider.min.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js",
               "src/assets/vendor/choices.js/public/assets/scripts/choices.min.js",
-              "src/assets/js/front.js"
+              "src/assets/js/front.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
