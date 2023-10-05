@@ -1,8 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.product-display {
-  margin: 10px;
-}
-
 /*search box css*/
 .search-form {
   position: relative;
@@ -23,15 +19,15 @@
   border-left: 1px solid #d1d5db;
 }
 
-.left-pan {
+.search-form .left-pan {
   padding-left: 7px;
 }
 
-.left-pan i {
+.search-form .left-pan i {
   padding-left: 10px;
 }
 
-.search-form-input {
+.search-form .search-form-input {
   height: 55px;
   text-indent: 33px;
   border-radius: 10px;

@@ -10,6 +10,9 @@ import { Product } from 'src/app/shared/models/Product';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
+
+  selectedProduct?:Product;
+
   constructor(
     private productService: ProductsService,
     activatedRoute: ActivatedRoute
@@ -24,4 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  openModel(product:Product){
+   this.selectedProduct = product;
+  }
+
 }
