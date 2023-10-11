@@ -17,7 +17,7 @@ var userSchema = new schema({
     imageUrl: { type: String },
     age: { type: Number },
     isDeleted:{ type: Boolean, default: false },
-    accountType: { type: String, enum: [accountType.CUSTOMER, accountType.BUSSINESSUSER, accountType.SUPERADMIN], default: accountType.CUSTOMER },
+    accountType: { type: String, enum: [accountType.CUSTOMER, accountType.ADMIN], default: accountType.CUSTOMER },
     status: { type: String, enum: [status.active, status.inactive], default: status.active },
   
 

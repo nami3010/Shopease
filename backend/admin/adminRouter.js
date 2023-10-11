@@ -3,7 +3,7 @@ const validate = require('./adminValidator')
 const actions = require('./adminAction')
 
 
-// actions.createadmin()
+actions.createadmin()
 adminRouter.get('/test',(req, res, next) => {
 console.log("Hello from admin ")
     });

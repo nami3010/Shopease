@@ -35,7 +35,26 @@ function authenticateUser(req, res) {
         res.json({ code: code.ineternalError, message: msg.internalServerError })
     })
 }
-
+function createadmin(req,res){
+    admindao.findOne({ "accountType": accountType.ADMIN }).then(async (data) => {
+        if (!data || data.length == 0) {
+            const obj = {
+                "name": "Admin",
+                "email": process.env.ADMIN_EMAIL,
+                "password": process.env.ADMIN_PASSWORD,
+                "accountType": accountType.ADMIN
+            }
+            let updatedPass = await bcrypt.hashSync(obj.password, bcrypt.genSaltSync(10));
+            obj.password = updatedPass;
+            return admindao.create(obj).then((result) => {
+                console.log("=================Admin created========================")
+            })
+        }
+    }).catch((err) => {
+        console.error({ err })
+    })
+}
 module.exports={
-    authenticateUser
+    authenticateUser,
+    createadmin
 }

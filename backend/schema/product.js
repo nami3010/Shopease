@@ -9,7 +9,6 @@ var ProductSchema = new schema({
   
     name: { type: String, required: true },
     email: { type: String, required: true },
-   category:productCategories,
     isDeleted: { type: Boolean, default: false },
     category: { type: mongoose.Types.ObjectId, ref: schemaName.category },
     description: { type: String, required: true },
