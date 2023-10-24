@@ -12,7 +12,7 @@ export const sample_products = [
     category: "men's clothing",
     images: ['assets/img/product-1.jpg','assets/img/product-2.jpg'],
     rating: { rate: 3.9, count: 120 },
-    favorite:false
+    favorite:false,
   },
   {
     id: "2",

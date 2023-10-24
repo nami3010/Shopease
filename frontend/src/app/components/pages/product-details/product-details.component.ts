@@ -10,7 +10,7 @@ import { Product } from 'src/app/shared/models/Product';
 })
 export class ProductDetailsComponent implements OnInit {
   product!: Product;
-  constructor(activatedRoute: ActivatedRoute, productService: ProductsService) {
+  constructor(activatedRoute: ActivatedRoute,private productService: ProductsService) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) {
         this.product = productService.getProductsById(params.id);
@@ -18,5 +18,7 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    //this.productService.loadResources();
+  }
 }

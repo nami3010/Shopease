@@ -15,5 +15,6 @@ export class Product{
     manufacturer?:string;
     itemType?:string;
     productImg?:string;
+    category!:string;
 
 }

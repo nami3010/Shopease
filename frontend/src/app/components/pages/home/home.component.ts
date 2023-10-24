@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/shared/models/Product';
 
@@ -11,25 +11,27 @@ import { Product } from 'src/app/shared/models/Product';
 export class HomeComponent implements OnInit {
   products: Product[] = [];
 
-  selectedProduct?:Product;
+  selectedProduct?: Product;
 
   constructor(
     private productService: ProductsService,
-    activatedRoute: ActivatedRoute
-  ) {
-    activatedRoute.params.subscribe((params) => {
-      if (params.searchTerm)
-        this.products = this.productService.getAllPrductsBySearch(
-          params.searchTerm
-        );
-      else this.products = this.productService.getAll();
-    });
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.products = this.productService.getAll();
   }
 
-  ngOnInit(): void {}
-
-  openModel(product:Product){
-   this.selectedProduct = product;
+  openModel(product: Product) {
+    this.selectedProduct = product;
   }
 
+  search(term: string) {
+    if (term) {
+      this.products = this.productService.getAllPrductsBySearch(term);
+    } else {
+      this.products = this.productService.getAll();
+      this.router.navigateByUrl('');
+    }
+  }
 }
