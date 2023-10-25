@@ -24,7 +24,7 @@
 }
 
 /* Text Color */
-.text-whitesmoke {
+.text-black {
     color: #000000
 }
 
@@ -33,7 +33,7 @@
 }
 
 .text-darkyellow {
-    color: #FFFF33;
+    color: #734C1C;
 }
 
 /* Lines */
@@ -154,7 +154,6 @@
 
 .form-control,
 .border-line {
-    background-color: #5f5f5f;
     background-image: none;
     border: 1px solid #424242;
     border-radius: 1px;
@@ -168,8 +167,6 @@
 .form-control:focus,
 .border-line:focus {
     border-color: #FFEB3B;
-    background-color: #616161;
-    color: #e6e6e6;
 }
 
 .form-control,
@@ -184,7 +181,6 @@
 /* Container */
 
 .container-content {
-    background-color: #3a3a3aa2;
     color: inherit;
     padding: 15px 20px 20px 20px;
     border-color: #FFEB3B;
@@ -229,6 +225,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
     .main-bg {
-        margin: 10px !important; /* 10px margin for mobile devices */
+        margin: 10px !important;
+        /* 10px margin for mobile devices */
     }
 }
