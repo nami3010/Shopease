@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../shared/models/Product';
-import { sample_products } from 'src/data';
+import { sample_categories, sample_products } from 'src/data';
 import { Observable } from 'rxjs';
+import { Category } from '../shared/models/category';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,10 @@ export class ProductsService {
 
   getProductsById(productId: string): Product {
     return this.getAll().find((prod) => prod.id == productId) ?? new Product();
+  }
+
+  getAllCategories():Category[]{
+    return sample_categories;
   }
 
   getProductsByCategory(categoryName: string) {

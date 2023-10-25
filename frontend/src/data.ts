@@ -1,4 +1,5 @@
-import { Product } from './app/shared/models/Product';
+import { Product } from './app/user/shared/models/Product';
+import { Category } from './app/user/shared/models/category';
 
 
 
@@ -127,3 +128,12 @@ export const sample_products = [
     favorite:false
   },
 ];
+
+export const sample_categories:Category[] = [
+  { name: 'All', count: 6 },
+  { name: 'Electronics and Gadgets', count: 4 },
+  { name: 'Clothing and Fashion', count: 2 },
+  { name: 'Home and Kitchen Appliances', count: 3 },
+  { name: 'Health and Beauty', count: 2 },
+  { name: 'Furniture and Home Decor', count: 1 }
+]
