@@ -1,0 +1,23 @@
+<div class="main-bg">
+    <div class="login-container text-c animated flipInX">
+        <div>
+            <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+        </div>
+        <h3 class="text-whitesmoke">Sign In</h3>
+        <div class="container-content">
+            <form [formGroup]="loginForm" class="margin-t">
+                <div class="form-group">
+                    <input type="text" formControlName="username" name="username" autocomplete="username"
+                        class="form-control mb-2" placeholder="Enter your Mobile Number" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" formControlName="password" name="password" autocomplete="password"
+                        class="form-control mb-2" placeholder="*****" required="">
+                </div>
+                <button type="submit" (click)="login()" class="form-button button-l mt-2 margin-b">Sign In</button>
+                <p class="text-white text-center"><small>Do not have an account?</small><a routerLink="/user/register"
+                        class="text-darkyellow"><small> Sign Up</small></a></p>
+            </form>
+        </div>
+    </div>
+</div>
