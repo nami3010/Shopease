@@ -1,0 +1,30 @@
+.mat-desktop {
+    background-color: #0f172a;
+    width: 230px;
+    height: 100%;
+}
+
+.mat-desktop-content {
+    height: 100vh;
+
+    .main {
+        margin-left: 30px;
+    }
+}
+
+.mat-desktop-toolbar {
+    justify-content: space-between;
+}
+
+.mat-desktop-toolbar .mat-icon {
+    margin-left: 15px;
+    color: grey;
+}
+
+.mat-desktop-toolbar .box {
+    margin-top: 15px;
+}
+
+mat-icon {
+    cursor: pointer;
+}

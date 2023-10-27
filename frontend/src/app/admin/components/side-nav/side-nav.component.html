@@ -1,0 +1,24 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav position="start" class="mat-desktop" #sidebar mode="side" opened>
+        <app-sidebar [sidenav]="sidenav"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content class="mat-desktop-content">
+        <div class="content">
+            <div class="toolbar">
+                <mat-toolbar class="mat-desktop-toolbar">
+                    <mat-icon (click)="sidebar.toggle()">
+                        menu
+                    </mat-icon>
+                    <div class="box">
+                        <mat-icon>search</mat-icon>
+                        <mat-icon>bookmark_border</mat-icon>
+                        <mat-icon>mail_outline</mat-icon>
+                    </div>
+                </mat-toolbar>
+            </div>
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
