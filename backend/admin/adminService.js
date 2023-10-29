@@ -1,6 +1,7 @@
 
 const code = require('../constants').http_codes;
 const msg = require('../constants').messages;
+const accountType = require('../constants').accountType;
 const admindao = require('./adminDao')
 const bcrypt = require('bcrypt');
 const util =require('../app util/util')
@@ -15,8 +16,8 @@ function authenticateUser(req, res) {
         }
         else if (bcrypt.compareSync(password, result.password)) 
         {
-            console.log("🚀 ~ file: adminService.js:16 ~ returnadmindao.find ~ bcrypt.compareSync(password, result.password):", bcrypt.compareSync(password, result.password))
-            console.log("===================>",result.accountType,result.accountType == accountType.SUPERADMIN)
+            
+            console.log("🚀 ~ file: adminService.js:20 ~ returnadmindao.findOne ~ result.accountType:", (result.accountType==accountType.ADMIN))
             let token = (result.accountType == accountType.ADMIN) ? util.generateToken(result, process.env.ADMIN_SECRET) : util.generateToken(result, process.env.USER_SECRET);
             let data = {
                 _id: result._id,
