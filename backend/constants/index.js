@@ -24,12 +24,13 @@ messages = {
     wrongPassword: "You entered wrong old password",
     profileUpdated: "Profile successfully updated",
     userCreated:"User created successfully",
-    categoryadd:"Category Added successfully"
+    categoryadd:"Category Added successfully",
+    updateProduct:"Product Updated Successfully",
+    prodeleted:"Product deleted"
 }
 schemas = {
     users: 'users',
     products: 'products',
-   
     category:'category'
 
 }

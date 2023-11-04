@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 const schemaName = require('../constants').schemas;
-const productCategories = require('../constants').productCategories;
+// const productCategories = require('../constants').productCategories;
 
 const status = require('../constants').status;
 
@@ -14,9 +14,10 @@ var ProductSchema = new schema({
     description: { type: String, required: true },
     photos: [String],
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users },
+    updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users }
   
 
 });
 
-User = module.exports = mongoose.model(schemaName.product, ProductSchema)
+Product = module.exports = mongoose.model(schemaName.products, ProductSchema)
 

@@ -13,6 +13,11 @@ function findOne(query){
         return result; 
     })
 }
+function find(query){
+    return categoryDao.find(query,).then((result)=>{
+        return result; 
+    })
+}
 function findOneAndUpdate(query,update,options){
     return categoryDao.findOneAndUpdate(query,update,options).then((result)=>{
         return result; 
@@ -27,5 +32,6 @@ module.exports = {
     create,
     findOne,
     findOneAndUpdate,
-    remove
+    remove,
+    find
 }
