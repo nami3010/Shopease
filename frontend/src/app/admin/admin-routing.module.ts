@@ -6,24 +6,26 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { AdminCustomersComponent } from './components/admin-customers/admin-customers.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { adminAuthGuard } from './Guard/admin-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'admin-home', component: AdminHomeComponent },
+      { path: 'admin-home', component: AdminHomeComponent,canActivate:[adminAuthGuard] },
       { path: 'admin-products', component: AdminProductsComponent },
       { path: 'admin-customers', component: AdminCustomersComponent },
       { path: 'admin-orders', component: AdminOrdersComponent },
       {
         path: '',
-        redirectTo: '/admin/login',
+        redirectTo: '/admin/admin-home',
         pathMatch: 'full',
       },
     ],
   },
+  { path: 'login', component: LoginComponent }
+  
 ];
 
 @NgModule({

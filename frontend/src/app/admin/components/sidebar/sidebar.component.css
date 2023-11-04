@@ -24,11 +24,11 @@ mat-icon{
   }
   
   .user .name {
-    color: white;
+    color: #000000de;
   }
 
   .user .mail {
-    color: #8997ac;
+    color: #000000de;
     margin-top: -16px;
   }
   
@@ -36,8 +36,7 @@ mat-icon{
     color: #466be0;
     text-transform: uppercase;
     font-weight: 900;
-    margin-left: 40px;
-    margin-bottom: 20px;
+    text-align: center;
   }
 
   .menu-item{
@@ -48,25 +47,36 @@ mat-icon{
     width: 100%;
     margin-bottom: 30px;
   }
+  
+  .mdc-button:focus{
+    background-color: #00000014;
+    color: #e91d63;
 
-  /* .menu-item{
-    margin: 0 10px 0 10px;
   }
-
-  .menu-item .menu-button{
-    width: 100%;
-    position: relative;
-    display: flex;
-    padding-left: 40px;
-    margin-bottom: 30px;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .menu-item .menu-button span{
-    margin-left: 15px;
-  } */
-
+  
   .menu-item .menu-button:hover, .menu-item .menu-button:focus{
     background-color: #2c3344;
+  }
+
+  .example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+  
+  mat-expansion-panel{
+    margin-bottom: 25px;
+  }
+
+  .home-button{
+    background: white;
+    width: 100%;
+    margin-bottom: 25px;
   }

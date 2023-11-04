@@ -16,6 +16,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardRoutingComponent } from './components/dashboard-routing/dashboard-routing.component';
+import { CustomToasterComponent } from './components/partials/custom-toaster/custom-toaster.component';
+import { AuthService } from './services/auth.service';
+import { ToastService } from './services/toast.service';
+import { CartComponent } from './components/pages/cart/cart.component';
+
 
 
 @NgModule({
@@ -30,6 +35,8 @@ import { DashboardRoutingComponent } from './components/dashboard-routing/dashbo
     LoginComponent,
     RegisterComponent,
     DashboardRoutingComponent,
+    CustomToasterComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +45,8 @@ import { DashboardRoutingComponent } from './components/dashboard-routing/dashbo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-  ]
+  ],
+  exports:[CustomToasterComponent],
+  providers:[AuthService,ToastService]
 })
 export class UserModule { }

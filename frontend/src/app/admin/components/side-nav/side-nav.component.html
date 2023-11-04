@@ -5,18 +5,9 @@
     <mat-sidenav-content class="mat-desktop-content">
         <div class="content">
             <div class="toolbar">
-                <mat-toolbar class="mat-desktop-toolbar">
-                    <mat-icon (click)="sidebar.toggle()">
-                        menu
-                    </mat-icon>
-                    <div class="box">
-                        <mat-icon>search</mat-icon>
-                        <mat-icon>bookmark_border</mat-icon>
-                        <mat-icon>mail_outline</mat-icon>
-                    </div>
-                </mat-toolbar>
+                <admin-app-header (sidenav)="sidenav.toggle()"></admin-app-header>
             </div>
-            <div class="main">
+            <div class="container">
                 <router-outlet></router-outlet>
             </div>
         </div>

@@ -6,25 +6,51 @@
     </div>
     <div class="menu">
         <div class="menu-head">
-            <span>Dashboard</span>
+            <h1>Dashboard</h1>
         </div>
         <div class="menu-item">
-            <button mat-fab extended class="menu-button" routerLink="/admin/admin-home">
-                    <mat-icon>dashboard</mat-icon>
-                    <span>Home</span>
+
+            <button mat-raised-button class="home-button" routerLink="/admin">Home
+                <mat-icon>dashboard</mat-icon>
             </button>
-            <button mat-fab extended class="menu-button" routerLink="/admin/admin-products">
-                <mat-icon>shopping_basket</mat-icon>
-                <span>Products Management</span>
-            </button>
-            <button mat-fab extended class="menu-button" routerLink="/admin/admin-customers">
-                <mat-icon>group</mat-icon>
-                <span>Customer Management</span>
-            </button>
-            <button mat-fab extended class="menu-button" routerLink="/admin/admin-orders">
-                <mat-icon>receipt</mat-icon>
-                <span>Order Management</span>
-            </button>
+            <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Products Management
+                            <mat-icon>shopping_basket</mat-icon>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <button mat-raised-button class="home-button" routerLink="/admin/admin-products">Products
+                        <mat-icon>shop_two</mat-icon>
+                    </button>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Customer Management
+                            <mat-icon>group</mat-icon>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <button mat-raised-button class="home-button" routerLink="/admin/admin-customers">Customers
+                        <mat-icon>person</mat-icon>
+                    </button>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Order Management
+                            <mat-icon>receipt</mat-icon>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <button mat-raised-button class="home-button" routerLink="/admin/admin-orders">Orders
+                        <mat-icon>list_alt</mat-icon>
+                    </button>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
     </div>
 </div>

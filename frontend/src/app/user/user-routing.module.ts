@@ -8,6 +8,7 @@ import { ShopComponent } from './components/pages/shop/shop.component';
 import { DashboardRoutingComponent } from './components/dashboard-routing/dashboard-routing.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { CartComponent } from './components/pages/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'category/:cat-id', component: ShopComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'cart', component: CartComponent },
       {
         path: '',
         redirectTo: '/user/home',
