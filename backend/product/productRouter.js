@@ -21,8 +21,7 @@ productRouter.route('/edit/:id')
     actions.edit(req, res)
 });
 productRouter.route('/delete/:id')
-.put([
-], (req, res) => {
+.put([validate.verifyAccess], (req, res) => {
     actions.deleteProduct(req, res)
 });
 module.exports = productRouter;

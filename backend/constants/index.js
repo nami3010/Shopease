@@ -26,7 +26,9 @@ messages = {
     userCreated:"User created successfully",
     categoryadd:"Category Added successfully",
     updateProduct:"Product Updated Successfully",
-    prodeleted:"Product deleted"
+    prodeleted:"Product deleted",
+    updateUser:"User Updated",
+    userdeleted:"User Deleted"
 }
 schemas = {
     users: 'users',

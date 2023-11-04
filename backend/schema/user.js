@@ -16,6 +16,7 @@ var userSchema = new schema({
     },
     imageUrl: { type: String },
     age: { type: Number },
+    dob:{type:String},
     isDeleted:{ type: Boolean, default: false },
     accountType: { type: String, enum: [accountType.CUSTOMER, accountType.ADMIN], default: accountType.CUSTOMER },
     status: { type: String, enum: [status.active, status.inactive], default: status.active },
@@ -27,6 +28,8 @@ var userSchema = new schema({
     resetPasswordExpires: {
         type: Date
     },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: schmaName.users },
+    updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: schmaName.users }
    
 });
 User = module.exports = mongoose.model(schmaName.users, userSchema)
