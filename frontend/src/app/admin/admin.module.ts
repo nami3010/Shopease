@@ -22,6 +22,20 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { AdminCustomersComponent } from './components/admin-customers/admin-customers.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { ToastService } from '../user/services/toast.service';
+import { UserModule } from '../user/user.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -48,6 +62,19 @@ import { AdminOrdersComponent } from './components/admin-orders/admin-orders.com
     MatListModule,
     NgFor,
     MatSlideToggleModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    UserModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
+  providers: [AuthService, ToastService],
 })
 export class AdminModule {}

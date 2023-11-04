@@ -1,15 +1,11 @@
 .mat-desktop {
-    background-color: #0f172a;
-    width: 230px;
+    background-color: #ebebeb;
+    width: 250px;
     height: 100%;
 }
 
 .mat-desktop-content {
     height: 100vh;
-
-    .main {
-        margin-left: 30px;
-    }
 }
 
 .mat-desktop-toolbar {

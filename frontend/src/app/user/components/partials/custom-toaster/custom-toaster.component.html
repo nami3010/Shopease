@@ -1,0 +1,16 @@
+<div *ngIf="(toast.showsToast$ | async)" aria-live="polite" aria-atomic="true"
+  class="bg-body-secondary position-relative bd-example-toasts rounded-3">
+  <div class="toast-container p-3 top-0 end-0 "  id="toastPlacement" 
+    data-original-class="toast-container p-3">
+    <div class="toast fade show" [class]="toast.toastState$ | async" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="fas fa-solid" [class]="toast.toastIcon$ | async"></i>&nbsp;
+        <strong class="me-auto">Status</strong>
+        <button type="button" class="btn-close" (click)="dismiss()" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        {{ toast.toastMessage$ | async }}
+      </div>
+    </div>
+  </div>
+</div>

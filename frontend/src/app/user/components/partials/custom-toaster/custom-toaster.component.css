@@ -1,0 +1,34 @@
+i{
+    cursor: pointer;
+}
+
+.success-toast{
+    background-color: #d4edda;
+    font-weight: bold;
+}
+
+.warning-toast{
+    background-color: #fff3cd;
+    font-weight: bold;
+}
+
+.danger-toast{
+    background-color: #f8d7da;
+    font-weight: bold;
+}
+
+.info-toast{
+    background-color: #d1ecf1;
+    font-weight: bold;
+}
+
+.danger-primary{
+    background-color: #cce5ff;
+    font-weight: bold;
+}
+
+.danger-secondary{
+    background-color: #e2e3e5;
+    font-weight: bold;
+}
+

@@ -1,1 +1,34 @@
-<p>login works!</p>
+<app-custom-toaster></app-custom-toaster>
+<div class="main-bg">
+    <div class="login-container animated flipInX">
+        <div class="text-c">
+            <h1 class="logo-badge text-black"><span class="fa fa-user-circle"></span></h1>
+        </div>
+        <h3 class="text-black text-c">Sign In</h3>
+        <div class="container-content">
+            <form [formGroup]="loginForm" class="margin-t">
+                <div class="form-group mb-2">
+                    <input type="text" formControlName="email" name="email" autocomplete="email"
+                        class="form-control mb-2" placeholder="Enter your email address">
+                    <span class="text-danger text-l"
+                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">Email
+                        Address is
+                        required</span>
+                    <span class="text-danger text-l"
+                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">Email must
+                        be a valid email address</span>
+                </div>
+                <div class="form-group mb-2">
+                    <input type="password" formControlName="password" name="password" autocomplete="password"
+                        class="form-control mb-2" placeholder="*****">
+                    <span class="text-danger text-l"
+                        *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">Password
+                        is
+                        required</span>
+                </div>
+                <button type="submit" (click)="login()" class="form-button button-l mt-2 btn-lg margin-b">Sign
+                    In</button>
+            </form>
+        </div>
+    </div>
+</div>
