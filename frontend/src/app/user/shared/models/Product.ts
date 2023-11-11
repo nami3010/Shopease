@@ -3,7 +3,7 @@ export class Product{
     imageCredit?:{};
     name!:string;
     price!:number;
-    images!:Array<any>;
+    photos!:Array<any>;
     description!:string;
     tags?:string[];
     favorite!:boolean;

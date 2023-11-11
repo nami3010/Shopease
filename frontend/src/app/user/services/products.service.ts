@@ -3,15 +3,20 @@ import { Product } from '../shared/models/Product';
 import { sample_categories, sample_products } from 'src/data';
 import { Observable } from 'rxjs';
 import { Category } from '../shared/models/category';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getAll(): Product[] {
     return sample_products;
+  }
+
+  getAllProducts(): Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:8000/product/list");
   }
 
   getAllPrductsBySearch(searchTerm: string) {
@@ -24,8 +29,8 @@ export class ProductsService {
     return this.getAll().find((prod) => prod.id == productId) ?? new Product();
   }
 
-  getAllCategories():Category[]{
-    return sample_categories;
+  getAllCategories():Observable<any[]>{
+    return this.http.get<any[]>("http://localhost:8000/category/list");
   }
 
   getProductsByCategory(categoryName: string) {

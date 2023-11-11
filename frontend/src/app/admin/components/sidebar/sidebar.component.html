@@ -2,7 +2,7 @@
     <div class="user">
         <img class="img-fluid img-thumbnail rounded" src="assets/img/profile.png" alt="profile image" />
         <h4 class="name">Admin</h4>
-        <p class="mail">mohit@gmail.com</p>
+        <p class="mail">mohit&#64;gmail.com</p>
     </div>
     <div class="menu">
         <div class="menu-head">
@@ -36,6 +36,20 @@
 
                     <button mat-raised-button class="home-button" routerLink="/admin/admin-customers">Customers
                         <mat-icon>person</mat-icon>
+                    </button>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Category Management
+                            <mat-icon>shopping_basket</mat-icon>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <button mat-raised-button class="home-button" routerLink="/admin/admin-categories">Categories
+                        <mat-icon>list</mat-icon>
+                    </button>
+                    <button mat-raised-button class="home-button" routerLink="/admin/admin-add-category">Add Category
+                        <mat-icon>add</mat-icon>
                     </button>
                 </mat-expansion-panel>
                 <mat-expansion-panel>

@@ -20,6 +20,7 @@ import { CustomToasterComponent } from './components/partials/custom-toaster/cus
 import { AuthService } from './services/auth.service';
 import { ToastService } from './services/toast.service';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { ProductsService } from './services/products.service';
 
 
 
@@ -47,6 +48,6 @@ import { CartComponent } from './components/pages/cart/cart.component';
     HttpClientModule
   ],
   exports:[CustomToasterComponent],
-  providers:[AuthService,ToastService]
+  providers:[AuthService,ToastService,ProductsService]
 })
 export class UserModule { }

@@ -1,0 +1,12 @@
+.demo-table {
+    width: 100%;
+  }
+
+.mat-column-demo-desc {
+    float: right;
+  }
+
+  .filter-input{
+    width: 100%;
+    margin-top: 10px;
+}

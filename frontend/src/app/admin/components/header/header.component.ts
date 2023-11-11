@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-app-header',
@@ -15,7 +16,14 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class HeaderComponent {
   @Output() sidenav: EventEmitter<any> = new EventEmitter();
 
+  constructor(private router: Router) {}
+
   toggle() {
     this.sidenav.emit();
+  }
+
+  logout() {
+    sessionStorage.removeItem('amazon_admin');
+    this.router.navigateByUrl('/admin/login');
   }
 }

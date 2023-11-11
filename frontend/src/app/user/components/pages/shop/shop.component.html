@@ -123,7 +123,7 @@
                                 <div class="position-relative mb-3">
                                     <div class="badge text-white bg-"></div><a class="d-block"
                                         routerLink="/user/product/{{product.id}}"><img class="img-fluid w-100"
-                                            [src]="product.images[0]" [alt]="product.name"></a>
+                                            [src]="product.photos[0]?product.photos[0]:'assets/img/product-1.jpg'" [alt]="product.name"></a>
                                     <div class="product-overlay">
                                         <ul class="mb-0 list-inline">
                                             <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark"
@@ -137,8 +137,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <h6> <a class="reset-anchor">{{product.name}}</a></h6>
-                                <p class="small text-muted">${{product.price}}</p>
+                                <h6> <a class="reset-anchor">{{product.name?product.name:'sample product'}}</a></h6>
+                                <p class="small text-muted">${{product.price?product.price:10}}</p>
                             </div>
                         </div>
 
