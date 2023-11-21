@@ -7,6 +7,8 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { AdminCustomersComponent } from './components/admin-customers/admin-customers.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { adminAuthGuard } from './Guard/admin-auth.guard';
+import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
+import { AdminAddCategoryComponent } from './components/admin-add-category/admin-add-category.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,8 @@ const routes: Routes = [
       { path: 'admin-products', component: AdminProductsComponent },
       { path: 'admin-customers', component: AdminCustomersComponent },
       { path: 'admin-orders', component: AdminOrdersComponent },
+      { path: 'admin-categories', component: AdminCategoriesComponent },
+      { path: 'admin-add-category', component: AdminAddCategoryComponent },
       {
         path: '',
         redirectTo: '/admin/admin-home',

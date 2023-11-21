@@ -31,11 +31,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { ToastService } from '../user/services/toast.service';
+
 import { UserModule } from '../user/user.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
+import { AdminAddCategoryComponent } from './components/admin-add-category/admin-add-category.component';
+import { CategoriesService } from './services/categories.service';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,8 @@ import { MatInputModule } from '@angular/material/input';
     AdminProductsComponent,
     AdminCustomersComponent,
     AdminOrdersComponent,
+    AdminCategoriesComponent,
+    AdminAddCategoryComponent,
   ],
   imports: [
     CommonModule,
@@ -74,7 +81,8 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatTooltipModule,
   ],
-  providers: [AuthService, ToastService],
+  providers: [AuthService, ToastService, CategoriesService],
 })
 export class AdminModule {}

@@ -10,7 +10,7 @@ import { Category } from '../../../shared/models/category';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  products: Product[] = [];
+  products: any[] = [];
   categories: Category[] = [];
   itemsPerPage: number = 8;
   p: number = 1;
@@ -21,10 +21,24 @@ export class ShopComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.productService.loadResources();
-
+    //this.loadAllProducts();
+    this.loadAllCategories();
     this.products = this.productService.getAll();
-    this.categories = this.productService.getAllCategories();
+    //this.categories = this.productService.getAllCategories();
+  }
+
+  loadAllProducts(){
+    this.productService.getAllProducts().subscribe((products:any)=>{
+      console.log('products--',products?.data);
+      this.products = products? products.data:[];
+    })
+  }
+
+  loadAllCategories(){
+    this.productService.getAllCategories().subscribe((categories:any)=>{
+      console.log('categores--',categories?.data);
+      this.categories = categories? categories.data:[];
+    })
   }
 
   search(term: string) {

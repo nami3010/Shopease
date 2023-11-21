@@ -28,13 +28,11 @@ export class LoginComponent implements OnInit{
   }
 
   login() {
-    console.log(this.loginForm.value)
     const user = {
       email: this.loginForm.controls.email.value,
       password: this.loginForm.controls.password.value,
     };
     this.authService.login(user).subscribe((res: any) => {
-      debugger;
       if (res.code == 200) {
         this.router.navigateByUrl('/admin/admin-home');
       } else {

@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="heading mt-2">Add Category</h1>
+    <div class="parent">
+        <form [formGroup]="catForm" class="margin-t">
+            <div class="form-group mb-2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" matInput placeholder="Enter Name">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="catForm.controls.name.touched && catForm.controls.name.errors?.required">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group mb-2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea formControlName="description" matInput placeholder="Enter description"></textarea>
+                    <mat-icon matSuffix>description</mat-icon>
+                    <mat-error *ngIf="catForm.controls.description.touched && catForm.controls.description.errors?.required">
+                        Description is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button class="mt-2" (click)="addCategory()">Save</button>
+        </form>
+    </div>
+</div>

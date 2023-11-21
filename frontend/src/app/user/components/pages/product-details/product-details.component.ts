@@ -19,6 +19,5 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.productService.loadResources();
   }
 }
