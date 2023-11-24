@@ -123,6 +123,34 @@ async function payment(req,res){
     res.status(500).json({ error: 'An error occurred while processing the payment.' });
   }
 }
+function addToCart(req,res){
+    let token = req.headers['authorization']
+    let obj = util.decodeToken(token)
+    let userObj = {
+        productId: req.body.id,
+        count:req.body.count
+    }
+    let query = { _id: obj.id },
+        update = { $push: { cart: userObj } },
+        options = { new: true }
+        userdao.findOneAndUpdate(query, update, options).then((data) => {
+            res.json({ code: code.ok, message:"Added to cart" })
+        }).catch((err) => {
+            res.json({ code: code.ineternalError, message: msg.internalServerError })
+        })
+    
+}
+function removefromcart(req, res) {
+    let token = req.headers['authorization']
+    let obj = util.decodeToken(token)
+    customerdao.findOneAndUpdate({ _id: obj.id },
+        { $pull: { cart: { productId: ObjectId(req.body.id) } } },
+        { safe: true, multi: true }
+            ).then((result) => {
+                res.json({ code: code.ok, message:"Removed from cart" })
+            })
+        
+}
 module.exports={
     login,
     signup,
@@ -130,5 +158,7 @@ module.exports={
     list,
     edit,
     deleteUser,
-    payment
+    payment,
+    addToCart,
+    removefromcart
 }

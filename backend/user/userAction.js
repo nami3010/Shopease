@@ -22,6 +22,12 @@ function deleteUser(req, res,next) {
 function payment(req, res,next) {
     service.payment(req, res,next)
 }
+function addToCart(req, res,next) {
+    service.addToCart(req, res,next)
+}
+function removefromcart(req, res,next) {
+    service.removefromcart(req, res,next)
+}
 module.exports={
     login,
     signup,
@@ -29,5 +35,7 @@ module.exports={
     list,
     edit,
     deleteUser,
-    payment
+    payment,
+    addToCart,
+    removefromcart
 }

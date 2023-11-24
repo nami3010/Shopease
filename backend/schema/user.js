@@ -21,7 +21,11 @@ var userSchema = new schema({
     accountType: { type: String, enum: [accountType.CUSTOMER, accountType.ADMIN], default: accountType.CUSTOMER },
     status: { type: String, enum: [status.active, status.inactive], default: status.active },
   
-
+cart:[{
+    productId:{type: mongoose.Schema.Types.ObjectId, ref: schmaName.products },
+    count:{type:Number},
+    createdAt: { type: Date, default: Date.now }
+}],
     resetPasswordToken: {
         type: String
     },
