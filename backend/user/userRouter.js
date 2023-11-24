@@ -37,15 +37,16 @@ userRouter.route('/addToCart')
 .post([], (req, res) => {
     actions.addToCart(req, res)
 });
-
 userRouter.route('/removefromCart')
 .post([], (req, res) => {
     actions.removefromcart(req, res)
 });
-
-
 userRouter.route('/process-payment')
 .post([], (req, res) => {
     actions.payment(req, res)
 });
+userRouter.route('/uploadPhoto')
+    .post([], (req, res) => {
+        service.uploadPhoto(req, res)
+    })
 module.exports = userRouter;

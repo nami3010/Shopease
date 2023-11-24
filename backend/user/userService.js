@@ -151,6 +151,26 @@ function removefromcart(req, res) {
             })
         
 }
+function uploadPhoto(req, res) {
+    req.newFile_name = [];
+    console.log("in upload photo", req.newFile_name)
+    util.upload(req, res, async function (err) {
+        if (err) {
+            return res.json({ code: code.badRequest, message: err })
+        }
+        else {
+            const files = req.files;
+            let index, len;
+            var filepathlist = []
+            for (index = 0, len = files.length; index < len; ++index) {
+                console.log("uploadPhoto -> files[index].path", files[index].path)
+                let filepath = process.env.IMAGEPREFIX + files[index].path.slice(4,);;
+                filepathlist.push(filepath)
+            }
+            return res.json({ code: code.created, message: msg.ok, data: filepathlist })
+        }
+    });
+}
 module.exports={
     login,
     signup,
@@ -160,5 +180,6 @@ module.exports={
     deleteUser,
     payment,
     addToCart,
-    removefromcart
+    removefromcart,
+    uploadPhoto
 }

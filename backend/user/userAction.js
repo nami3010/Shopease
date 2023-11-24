@@ -28,6 +28,9 @@ function addToCart(req, res,next) {
 function removefromcart(req, res,next) {
     service.removefromcart(req, res,next)
 }
+function uploadPhoto(req, res,next) {
+    service.uploadPhoto(req, res,next)
+}
 module.exports={
     login,
     signup,
@@ -37,5 +40,6 @@ module.exports={
     deleteUser,
     payment,
     addToCart,
-    removefromcart
+    removefromcart,
+    uploadPhoto
 }

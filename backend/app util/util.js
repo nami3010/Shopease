@@ -4,26 +4,26 @@ const nodemailer = require('nodemailer')
 const CODE = require('../constants/index').http_codes;
 const MSG = require('../constants/index').messages;
 
-// var fs = require('fs')
-// var path = require('path')
-// var multer = require('multer');
-// var storage = multer.diskStorage({
-//     destination: function (req, file, callback) {
-//         callback(null, './img');
-//     },
-//     filename: function (req, file, callback) {
-//         let file_name = file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-//         req.newFile_name.push(file_name);
-//         callback(null, file_name);
-//     }
-// });
-// var upload = multer({
-//     storage: storage,
-//     fileFilter: function (req, file, callback) {
-//         checkFileType(file, callback)
-//     }
+var fs = require('fs')
+var path = require('path')
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, './img');
+    },
+    filename: function (req, file, callback) {
+        let file_name = file.fieldname + '-' + Date.now() + path.extname(file.originalname)
+        req.newFile_name.push(file_name);
+        callback(null, file_name);
+    }
+});
+var upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, callback) {
+        checkFileType(file, callback)
+    }
 
-// }).array('img', 5);
+}).array('img', 5);
 
 
 
@@ -128,6 +128,6 @@ module.exports = {
     // generateRandomPassword,
     decodeToken,
     // verifyUsrToken,
-    // upload,
-    // checkFileType
+    upload,
+    checkFileType
 }
