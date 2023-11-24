@@ -99,16 +99,16 @@ function decodeToken(token) {
 
 
 
-// function checkFileType(file, callback) {
-//     const fileTypes = /jpeg|jpg|png|gif/;
-//     const extName = fileTypes.test(path.extname(file.originalname).toLocaleLowerCase());
-//     if (extName) {
-//         return callback(null, true);
-//     }
-//     else {
-//         callback('Error:Images only!')
-//     }
-// }
+function checkFileType(file, callback) {
+    const fileTypes = /jpeg|jpg|png|gif/;
+    const extName = fileTypes.test(path.extname(file.originalname).toLocaleLowerCase());
+    if (extName) {
+        return callback(null, true);
+    }
+    else {
+        callback('Error:Images only!')
+    }
+}
 
 
 
