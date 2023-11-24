@@ -14,6 +14,7 @@ messages = {
     registered: 'Successfully registered',
     invalidBody: 'Invalid input',
     invalidPassword: 'Invalid password',
+    invalidToken:'Token is invalid',
     loggedIn: 'Successfully logged in',
     userNotFound: 'No such user found',
     mailNotSent: 'Something went wrong while sending mail',

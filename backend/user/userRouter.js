@@ -10,6 +10,10 @@ userRouter.route('/login')
 .post([validate.validateLogin], (req, res) => {
     actions.login(req, res)
 });
+userRouter.route('/changePassword')
+    .put([validate.validateChangePassword, validate.verifyToken], (req, res) => {
+        actions.changePassword(req, res)
+    });
 userRouter.route('/add')
 .post([
 ], (req, res) => {

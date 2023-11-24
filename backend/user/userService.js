@@ -38,6 +38,7 @@ function signup(req,res){
         console.log("🚀 ~ file: userService.js:37 ~ userdao.findOne ~ data:", data)
         if (!data || data.length == 0) {
             let updatedPass = await bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+            console.log("🚀 ~ file: userService.js:41 ~ userdao.findOne ~ updatedPass:", updatedPass)
             req.body.password = updatedPass;
             return userdao.create(req.body).then((result) => {
                 console.log("User registered successfully")
