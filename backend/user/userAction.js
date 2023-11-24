@@ -19,11 +19,15 @@ function edit(req, res,next) {
 function deleteUser(req, res,next) {
     service.deleteUser(req, res,next)
 }
+function payment(req, res,next) {
+    service.payment(req, res,next)
+}
 module.exports={
     login,
     signup,
     add,
     list,
     edit,
-    deleteUser
+    deleteUser,
+    payment
 }

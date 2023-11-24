@@ -13,6 +13,7 @@ var ProductSchema = new schema({
     category: { type: mongoose.Types.ObjectId, ref: schemaName.category },
     description: { type: String, required: true },
     photos: [String],
+    price:{type:Number},
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users },
     updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users }
   

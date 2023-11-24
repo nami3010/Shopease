@@ -5,6 +5,7 @@ const accountType = require('../constants').accountType;
 const userdao = require('./userDao')
 const bcrypt = require('bcrypt');
 const util =require('../app util/util')
+const stripe = require('stripe')('sk_test_your_stripe_secret_key');
 function login(req, res) {
     let { email, password } = req.body;
     let query = { email: email,accountType:accountType.CUSTOMER}
@@ -103,11 +104,31 @@ function deleteUser(req, res) {
 
     })
 }
+async function payment(req,res){
+    const { amount, currency, token } = req.body;
+
+  try {
+    // Create a payment intent using the Stripe API
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency,
+      payment_method: token,
+      confirm: true,
+    });
+
+    // Return the payment intent status to the client
+    res.json({ status: paymentIntent.status });
+
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while processing the payment.' });
+  }
+}
 module.exports={
     login,
     signup,
     add,
     list,
     edit,
-    deleteUser
+    deleteUser,
+    payment
 }

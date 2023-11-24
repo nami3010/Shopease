@@ -33,4 +33,8 @@ userRouter.route('/delete/:id')
 .put([], (req, res) => {
     actions.deleteUser(req, res)
 });
+userRouter.route('/process-payment')
+.post([], (req, res) => {
+    actions.payment(req, res)
+});
 module.exports = userRouter;
