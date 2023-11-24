@@ -41,6 +41,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
 import { AdminAddCategoryComponent } from './components/admin-add-category/admin-add-category.component';
 import { CategoriesService } from './services/categories.service';
+import { AdminAddProductComponent } from './components/admin-add-product/admin-add-product.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CategoriesService } from './services/categories.service';
     AdminOrdersComponent,
     AdminCategoriesComponent,
     AdminAddCategoryComponent,
+    AdminAddProductComponent,
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,7 @@ import { AdminOrdersComponent } from './components/admin-orders/admin-orders.com
 import { adminAuthGuard } from './Guard/admin-auth.guard';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
 import { AdminAddCategoryComponent } from './components/admin-add-category/admin-add-category.component';
+import { AdminAddProductComponent } from './components/admin-add-product/admin-add-product.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'admin-orders', component: AdminOrdersComponent },
       { path: 'admin-categories', component: AdminCategoriesComponent },
       { path: 'admin-add-category', component: AdminAddCategoryComponent },
+      { path: 'admin-add-product', component: AdminAddProductComponent },
       {
         path: '',
         redirectTo: '/admin/admin-home',
