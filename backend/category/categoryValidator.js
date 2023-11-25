@@ -26,7 +26,7 @@ async function verifyAccess(req, res, next) {
                     if (data.accountType == accountType.ADMIN) {
                         next();
                     } else {
-                        return res.json({ code: code.unAuthorized, message: "You are not authorized to add category" })
+                        return res.json({ code: code.unAuthorized, message: "You are not authorized to gory" })
                     }
                 }
             }).catch((err) => {
