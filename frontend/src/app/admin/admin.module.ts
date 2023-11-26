@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { ToastService } from '../user/services/toast.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { UserModule } from '../user/user.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -41,7 +42,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
 import { AdminAddCategoryComponent } from './components/admin-add-category/admin-add-category.component';
 import { CategoriesService } from './services/categories.service';
-import { AdminAddProductComponent } from './components/admin-add-product/admin-add-product.component';
+import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { AdminAddProductComponent } from './components/admin-add-product/admin-a
     AdminOrdersComponent,
     AdminCategoriesComponent,
     AdminAddCategoryComponent,
-    AdminAddProductComponent,
+    AdminAddProductsComponent,
   ],
   imports: [
     CommonModule,
@@ -84,6 +85,7 @@ import { AdminAddProductComponent } from './components/admin-add-product/admin-a
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService, ToastService, CategoriesService],
 })

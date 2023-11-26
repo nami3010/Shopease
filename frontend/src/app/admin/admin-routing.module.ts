@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'admin-orders', component: AdminOrdersComponent },
       { path: 'admin-categories', component: AdminCategoriesComponent },
       { path: 'admin-add-category', component: AdminAddCategoryComponent },
-      { path: 'admin-add-product', component: AdminAddProductComponent },
+      { path: 'admin-add-products', component: AdminAddProductComponent },
       {
         path: '',
         redirectTo: '/admin/admin-home',

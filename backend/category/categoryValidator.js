@@ -1,10 +1,7 @@
-
-const code = require('../constants').http_codes;
-const msg = require('../constants').messages;
-const admindao = require('../admin/adminDao')
-const jwt = require('jsonwebtoken')
-
-
+const code = require("../constants").http_codes;
+const msg = require("../constants").messages;
+const admindao = require("../admin/adminDao");
+const jwt = require("jsonwebtoken");
 
 async function verifyAccess(req, res, next) {
     let token = req.headers['authorization']
@@ -37,5 +34,5 @@ async function verifyAccess(req, res, next) {
 }
 
 module.exports = {
-    verifyAccess
-}
+  verifyAccess,
+};

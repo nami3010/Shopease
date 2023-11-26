@@ -1,3 +1,4 @@
+<app-custom-toaster></app-custom-toaster>
 <div class="container">
     <h1 class="heading mt-2">Add Category</h1>
     <div class="parent">
@@ -22,7 +23,10 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <button mat-raised-button class="mt-2" (click)="addCategory()">Save</button>
+            <button mat-raised-button class="mt-2" (click)="addCategory()">
+                <mat-icon *ngIf="loading"><mat-spinner color="accent" diameter="20">
+                </mat-spinner></mat-icon>
+                Add Category</button>
         </form>
     </div>
 </div>

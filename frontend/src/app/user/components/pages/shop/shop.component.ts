@@ -21,9 +21,9 @@ export class ShopComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.loadAllProducts();
+    this.loadAllProducts();
     this.loadAllCategories();
-    this.products = this.productService.getAll();
+    //this.products = this.productService.getAll();
     //this.categories = this.productService.getAllCategories();
   }
 
