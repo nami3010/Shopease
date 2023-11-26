@@ -21,6 +21,7 @@ import { AuthService } from './services/auth.service';
 import { ToastService } from './services/toast.service';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { ProductsService } from './services/products.service';
+import { UserAboutusComponent } from './components/pages/user-aboutus/user-aboutus.component';
 
 
 
@@ -37,7 +38,8 @@ import { ProductsService } from './services/products.service';
     RegisterComponent,
     DashboardRoutingComponent,
     CustomToasterComponent,
-    CartComponent
+    CartComponent,
+    UserAboutusComponent
   ],
   imports: [
     CommonModule,

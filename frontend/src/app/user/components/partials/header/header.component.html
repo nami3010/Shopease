@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <!-- Link--><a class="nav-link active" routerLink="/">Home</a>
+            <a class="nav-link" routerLink="/">Home</a>
           </li>
           <li class="nav-item">
-            <!-- Link--><a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" routerLink="shop">Shop</a>
           </li>
           <li class="nav-item">
-            <!-- Link--><a class="nav-link" routerLink="shop">Shop</a>
+            <a class="nav-link" routerLink="about-us">About Us</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -28,14 +28,16 @@
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#"
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
             <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown">
-              <a class="dropdown-item border-0 transition-link" *ngIf="!(loggedIn || (authenticationService.loggedIn$|async))"
-              routerLink="/user/login"> <i class="fas fa-sign-in-alt me-1 text-gray fw-bold"></i>Login</a>
-              <a *ngIf="loggedIn || (authenticationService.loggedIn$|async)" (click)="logout()"
-              class="dropdown-item border-0 transition-link"><i class="fas fa-sign-out-alt  me-1 text-gray fw-bold"></i>Logout</a>
               <a class="dropdown-item border-0 transition-link"
-              routerLink="/user/register"> <i class="fa fa-user-plus me-1 text-gray fw-bold"></i>Register</a>
+                *ngIf="!(loggedIn || (authenticationService.loggedIn$|async))" routerLink="/user/login"> <i
+                  class="fas fa-sign-in-alt me-1 text-gray fw-bold"></i>Login</a>
+              <a *ngIf="loggedIn || (authenticationService.loggedIn$|async)" (click)="logout()"
+                class="dropdown-item border-0 transition-link"><i
+                  class="fas fa-sign-out-alt  me-1 text-gray fw-bold"></i>Logout</a>
+              <a class="dropdown-item border-0 transition-link" routerLink="/user/register"> <i
+                  class="fa fa-user-plus me-1 text-gray fw-bold"></i>Register</a>
               <a class="dropdown-item border-0 transition-link" routerLink="/admin"> <i
-                class="fas fa-user me-1 text-gray fw-normal"></i>Admin</a>
+                  class="fas fa-user me-1 text-gray fw-normal"></i>Admin</a>
             </div>
           </li>
         </ul>

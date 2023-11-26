@@ -4,6 +4,7 @@ import { ToastService } from '../../../services/toast.service';
 import { AuthService } from '../../../services/auth.service';
 import { TOAST_ICONS, TOAST_STATE } from '../../../shared/constants/constants';
 import { Router } from '@angular/router';
+import { VoiceRecognitionService } from '../../../services/voice-recognition.service';
 
 @Component({
   selector: 'user-app-login',
@@ -12,19 +13,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-
+  isStillRecoginze = false;
+  service='';
   constructor(
     private formBuilder: FormBuilder,
     public toast: ToastService,
     private authService: AuthService,
-    private router: Router
-  ) {}
+    private router: Router,
+    public voiceRecognition: VoiceRecognitionService
+  ) {
+    this.voiceRecognition.init();
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+    
   }
 
   login() {
@@ -45,4 +51,13 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  startService() {
+    this.isStillRecoginze = this.voiceRecognition.start() === true ? true : false;
+  }
+
+  stopService() {
+    this.isStillRecoginze = this.voiceRecognition.stop() === false ? false : true;
+  }
+
 }
