@@ -8,10 +8,13 @@
         <h3 class="text-black text-c">Sign In</h3>
         <div class="container-content">
             <form [formGroup]="loginForm" class="margin-t">
-                <div class="input-group flex-nowrap mb-2">
-                    <input type="text" formControlName="email" name="email" autocomplete="email"
-                        class="form-control mb-2" placeholder="Enter your email address">
-                    <span class="input-group-text" id="addon-wrapping" (click)="startService('email')"><i class="fa fa-microphone"></i></span>
+                <div class="form-group  mb-2">
+                    <div class="input-group flex-nowrap">
+                        <input type="text" formControlName="email" name="email" autocomplete="email"
+                            class="form-control mb-2" placeholder="Enter your email address">
+                        <span class="input-group-text" id="addon-wrapping" (click)="startService('email')"><i
+                                class="fa fa-microphone"></i></span>
+                    </div>
                     <span class="text-danger text-l"
                         *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">Email
                         Address is
@@ -20,10 +23,13 @@
                         *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">Email must
                         be a valid email address</span>
                 </div>
-                <div class="input-group flex-nowrap mb-2">
-                    <input type="password" formControlName="password" name="password" autocomplete="password"
-                        class="form-control mb-2" placeholder="*****">
-                        <span class="input-group-text" id="addon-wrapping" (click)="startService('password')"><i class="fa fa-microphone"></i></span>
+                <div class="fprm-group mb-2">
+                    <div class="input-group flex-nowrap">
+                        <input type="password" formControlName="password" name="password" autocomplete="password"
+                            class="form-control mb-2" placeholder="*****">
+                        <span class="input-group-text" id="addon-wrapping" (click)="startService('password')"><i
+                                class="fa fa-microphone"></i></span>
+                    </div>
                     <span class="text-danger text-l"
                         *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">Password
                         is
