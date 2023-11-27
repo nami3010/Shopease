@@ -8,9 +8,10 @@
         <h3 class="text-black text-c">Sign In</h3>
         <div class="container-content">
             <form [formGroup]="loginForm" class="margin-t">
-                <div class="form-group mb-2">
+                <div class="input-group flex-nowrap mb-2">
                     <input type="text" formControlName="email" name="email" autocomplete="email"
                         class="form-control mb-2" placeholder="Enter your email address">
+                    <span class="input-group-text" id="addon-wrapping" (click)="startService('email')"><i class="fa fa-microphone"></i></span>
                     <span class="text-danger text-l"
                         *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">Email
                         Address is
@@ -19,9 +20,10 @@
                         *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">Email must
                         be a valid email address</span>
                 </div>
-                <div class="form-group mb-2">
+                <div class="input-group flex-nowrap mb-2">
                     <input type="password" formControlName="password" name="password" autocomplete="password"
                         class="form-control mb-2" placeholder="*****">
+                        <span class="input-group-text" id="addon-wrapping" (click)="startService('password')"><i class="fa fa-microphone"></i></span>
                     <span class="text-danger text-l"
                         *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">Password
                         is
@@ -29,7 +31,7 @@
                 </div>
                 <button type="submit" (click)="login()" class="form-button button-l mt-2 btn-lg margin-b">Sign
                     In</button>
-                <p class="text-black text-center"><small>Do not have an account?</small><a routerLink="/user/register"
+                <p class="text-black text-start"><small>Do not have an account?</small><a routerLink="/user/register"
                         class="text-darkyellow"><small> Sign Up</small></a></p>
             </form>
         </div>
@@ -38,9 +40,8 @@
 
 <div style="margin: 100px;">
     <h1>Voice recognition</h1>
-    <button style="margin: 10px;" (click)="startService()">Start</button>
-    <button style="margin: 10px;" (click)="stopService()">Stop</button>
+    <button style="margin: 10px;" (click)="startService('email')">Start</button>
+    <button style="margin: 10px;" (click)="stopService('password')">Stop</button>
     <p>{{ loginForm.controls.email.value }}</p>
     <p *ngIf="isStillRecoginze">Servie---{{voiceRecognition.text}}</p>
-  </div>
-  
+</div>

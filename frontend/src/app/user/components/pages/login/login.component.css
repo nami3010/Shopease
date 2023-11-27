@@ -65,7 +65,7 @@
 }
 
 .button-l {
-    width: 100% !important;
+    width: 90% !important;
 }
 
 /* Margins g(global) - l(left) - r(right) - t(top) - b(bottom) */
@@ -221,6 +221,14 @@ a {
 
 a:hover {
     color: currentcolor;
+}
+
+#addon-wrapping{
+    background: none;
+    border: 0;
+    align-items: baseline;
+    font-size: 1.2rem;
+
 }
 
 @media only screen and (max-width: 600px) {

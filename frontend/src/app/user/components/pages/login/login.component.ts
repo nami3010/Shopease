@@ -52,12 +52,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  startService() {
+  startService(fieldName:string) {
     this.isStillRecoginze = this.voiceRecognition.start() === true ? true : false;
+    this.loginForm.get(fieldName)?.setValue(this.voiceRecognition.text); 
   }
 
-  stopService() {
+  stopService(fieldName:string) {
     this.isStillRecoginze = this.voiceRecognition.stop() === false ? false : true;
+    this.loginForm.get(fieldName)?.setValue(this.voiceRecognition.text);
   }
 
 }

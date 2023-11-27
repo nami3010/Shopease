@@ -58,6 +58,7 @@ export class VoiceRecognitionService {
     }
     return true;
   }
+  
   stop() {
     if (this.isStarted) {
       this.isStoppedAutomatically = false;
