@@ -1,7 +1,10 @@
-const code = require("../constants").http_codes;
-const msg = require("../constants").messages;
-const admindao = require("../admin/adminDao");
-const jwt = require("jsonwebtoken");
+
+const code = require('../constants').http_codes;
+const msg = require('../constants').messages;
+const admindao = require('../admin/adminDao')
+const jwt = require('jsonwebtoken')
+
+
 
 async function verifyAccess(req, res, next) {
     let token = req.headers['authorization']
@@ -23,7 +26,7 @@ async function verifyAccess(req, res, next) {
                     if (data.accountType == accountType.ADMIN) {
                         next();
                     } else {
-                        return res.json({ code: code.unAuthorized, message: "You are not authorized to gory" })
+                        return res.json({ code: code.unAuthorized, message: "You are not authorized to add category" })
                     }
                 }
             }).catch((err) => {
@@ -34,5 +37,5 @@ async function verifyAccess(req, res, next) {
 }
 
 module.exports = {
-  verifyAccess,
-};
+    verifyAccess
+}

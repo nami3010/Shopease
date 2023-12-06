@@ -47,6 +47,6 @@ userRouter.route('/process-payment')
 });
 userRouter.route('/uploadPhoto')
     .post([], (req, res) => {
-        service.uploadPhoto(req, res)
+        actions.uploadPhoto(req, res)
     })
 module.exports = userRouter;
