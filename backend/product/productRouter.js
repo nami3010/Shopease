@@ -20,9 +20,14 @@ productRouter.route('/edit/:id')
 ], (req, res) => {
     actions.edit(req, res)
 });
-productRouter.route('/delete/:id')
-.put([validate.verifyAccess], (req, res) => {
-    actions.deleteProduct(req, res)
+
+productRouter.route("/productbyCatId/:carId").put([], (req, res) => {
+  console.log('cat-id', req.body)
+    actions.getProductByCatId(req, res);
+  });
+
+productRouter.route("/delete/:id").put([validate.verifyAccess], (req, res) => {
+  actions.deleteProduct(req, res);
 });
 productRouter.route('/get/:id')
 .get([

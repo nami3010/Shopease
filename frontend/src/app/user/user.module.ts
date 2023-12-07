@@ -22,6 +22,7 @@ import { ToastService } from './services/toast.service';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { ProductsService } from './services/products.service';
 import { UserAboutusComponent } from './components/pages/user-aboutus/user-aboutus.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 
 
@@ -39,7 +40,8 @@ import { UserAboutusComponent } from './components/pages/user-aboutus/user-about
     DashboardRoutingComponent,
     CustomToasterComponent,
     CartComponent,
-    UserAboutusComponent
+    UserAboutusComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,
