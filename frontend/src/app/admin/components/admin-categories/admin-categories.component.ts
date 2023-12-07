@@ -11,7 +11,7 @@ import { CategoriesService } from '../../services/categories.service';
 })
 export class AdminCategoriesComponent {
   categories: any[] = [];
-  displayedColumns: string[] = ['name', 'desc'];
+  displayedColumns: string[] = ['position', 'name', 'desc', 'edit', 'delete'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,6 +20,11 @@ export class AdminCategoriesComponent {
   constructor(private catService: CategoriesService) {
     this.catService.getAllCategories().subscribe((categories: any) => {
       console.log('categores--', categories?.data);
+
+      for (var i = 0; i < categories.data.length; i++) {
+        categories.data[i].position = i+1; // Add "total": 2 to all objects in array
+    }
+
       this.categories = categories ? categories.data : [];
       // Assign the data to the data source for the table to render
       this.dataSource = new MatTableDataSource(this.categories);

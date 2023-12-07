@@ -17,7 +17,7 @@ export interface UserData {
   styleUrls: ['./admin-products.component.css'],
 })
 export class AdminProductsComponent {
-  displayedColumns: string[] = ['position', 'name', 'description', 'price'];
+  displayedColumns: string[] = ['position', 'name', 'description', 'price', 'edit', 'delete'];
   dataSource!: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
