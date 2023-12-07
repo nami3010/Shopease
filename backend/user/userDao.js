@@ -9,7 +9,9 @@ function create(data) {
 }
 
 function findOne(query){
+    console.log("query",query)
     return userDao.findOne(query,).then((result)=>{
+        console.log("result",result)
         return result; 
     })
 }

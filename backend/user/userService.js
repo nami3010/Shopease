@@ -6,22 +6,24 @@ const userdao = require('./userDao')
 const bcrypt = require('bcrypt');
 const util =require('../app util/util')
 const stripe = require('stripe')('sk_test_your_stripe_secret_key');
+const { ObjectId } =require ("bson")
 function login(req, res) {
     let { email, password } = req.body;
     let query = { email: email,accountType:accountType.CUSTOMER}
     return userdao.findOne(query).then((result) => {
-      
+        console.log("bcrypt.compareSync(password, result.password",bcrypt.compare(password, result.password))
         if (!result) {
             res.json({ code: code.notFound, message: msg.userNotFound })
         }
-        else if (bcrypt.compareSync(password, result.password)) 
+        else if (bcrypt.compare(password, result.password)) 
         {
+            
             let token = util.generateToken(result, process.env.USER_SECRET);
             let data = {
                 _id: result._id,
                 email: result.email,
                 // accountType: result.accountType,
-                fname: result.fname
+                name: result.name
             }
             res.json({ code: code.ok, message: msg.loggedIn, token: token, data: data })
         }
@@ -38,9 +40,10 @@ function signup(req,res){
     userdao.findOne({ "email": req.body.email }).then(async (data) => {
         console.log("🚀 ~ file: userService.js:37 ~ userdao.findOne ~ data:", data)
         if (!data || data.length == 0) {
-            let updatedPass = await bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+            let updatedPass = await bcrypt.hash(req.body.password,10);
             console.log("🚀 ~ file: userService.js:41 ~ userdao.findOne ~ updatedPass:", updatedPass)
             req.body.password = updatedPass;
+          
             return userdao.create(req.body).then((result) => {
                 console.log("User registered successfully")
                 res.json({ code: code.ok, message: msg.userCreated, data:result })
@@ -125,16 +128,18 @@ async function payment(req,res){
 }
 function addToCart(req,res){
     let token = req.headers['authorization']
+    console.log("token",token)
     let obj = util.decodeToken(token)
+    console.log("token id",obj)
     let userObj = {
-        productId: req.body.id,
+        productId: req.body.productId,
         count:req.body.count
     }
     let query = { _id: obj.id },
         update = { $push: { cart: userObj } },
         options = { new: true }
         userdao.findOneAndUpdate(query, update, options).then((data) => {
-            res.json({ code: code.ok, message:"Added to cart" })
+            res.json({ code: code.ok,data:data, message:"Added to cart" })
         }).catch((err) => {
             res.json({ code: code.ineternalError, message: msg.internalServerError })
         })
@@ -143,11 +148,11 @@ function addToCart(req,res){
 function removefromcart(req, res) {
     let token = req.headers['authorization']
     let obj = util.decodeToken(token)
-    customerdao.findOneAndUpdate({ _id: obj.id },
-        { $pull: { cart: { productId: ObjectId(req.body.id) } } },
+    userdao.findOneAndUpdate({ _id: obj.id },
+        { $pull: { cart: { productId:new ObjectId(req.body.productId)} } },
         { safe: true, multi: true }
             ).then((result) => {
-                res.json({ code: code.ok, message:"Removed from cart" })
+                res.json({ code: code.ok,data:result, message:"Removed from cart" })
             })
         
 }
@@ -171,6 +176,31 @@ function uploadPhoto(req, res) {
         }
     });
 }
+function getfromcart(req, res) {
+    let token = req.headers['authorization']
+    let obj = util.decodeToken(token)
+    userdao.findOne({ _id: obj.id }
+            ).then((result) => {
+                res.json({ code: code.ok,data:result.cart })
+            })
+        
+}
+function updateCart(req,res){
+    let token = req.headers['authorization']
+    let obj = util.decodeToken(token)
+    req.body.updatedBy = obj.id;
+  console.log("obj",obj)
+    
+   const options = { new: true };
+    const query = { _id: obj.id, 'cart._id': req.body.cartId };
+  const update = { $set: { 'cart.$.count': req.body.count } };
+            return userdao.findOneAndUpdate(query,update,options).then((result) => {
+                res.json({ code: code.ok, result:result })
+        
+    }).catch((err) => {
+        res.json({ code: code.internalError, message: err })
+    })
+}
 module.exports={
     login,
     signup,
@@ -181,5 +211,7 @@ module.exports={
     payment,
     addToCart,
     removefromcart,
-    uploadPhoto
+    uploadPhoto,
+    getfromcart,
+    updateCart
 }

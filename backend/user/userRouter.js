@@ -41,6 +41,14 @@ userRouter.route('/removefromCart')
 .post([], (req, res) => {
     actions.removefromcart(req, res)
 });
+userRouter.route('/updateCart')
+.post([], (req, res) => {
+    actions.updateCart(req, res)
+});
+userRouter.route('/getfromCart')
+.get([], (req, res) => {
+    actions.getfromcart(req, res)
+});
 userRouter.route('/process-payment')
 .post([], (req, res) => {
     actions.payment(req, res)
