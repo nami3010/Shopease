@@ -9,7 +9,8 @@ import { Product } from '../../../shared/models/Product';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  products: Product[] = [];
+  products: any = [];
+  categories: any[] = [];
 
   selectedProduct?: Product;
 
@@ -18,8 +19,25 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.products = this.productService.getAll();
+  ngOnInit() {
+    this.loadAllProducts();
+    this.loadAllCategories();
+  }
+
+  loadAllProducts() {
+    this.products = this.productService
+      .getAllProducts()
+      .subscribe((products: any) => {
+        console.log('products--', products?.data);
+        this.products = products ? products.data.slice(0, 6) : [];
+      });
+  }
+
+  loadAllCategories() {
+    this.productService.getAllCategories().subscribe((categories: any) => {
+      console.log('categores--', categories?.data);
+      this.categories = categories ? categories.data : [];
+    });
   }
 
   openModel(product: Product) {

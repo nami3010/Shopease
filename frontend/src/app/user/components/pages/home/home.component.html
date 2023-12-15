@@ -55,6 +55,8 @@
       </div>
     </div>
   </section>
+
+  <!-- {{categories|json}} -->
   <!-- CATEGORIES SECTION-->
   <section class="pt-5">
     <header class="text-center">
@@ -62,42 +64,34 @@
       <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
     </header>
     <div class="row">
-      <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="assets/img/cat-img-1.jpg"
-            alt="" /><strong class="category-item-title">Clothes</strong></a>
+      <div class="col-md-4"><a class="category-item" ><img class="img-fluid" src="assets/img/cat-img-1.jpg"
+            alt="" /><strong class="category-item-title" routerLink="/user/shop">Clothes</strong></a>
       </div>
-      <div class="col-md-4"><a class="category-item mb-4" href="shop.html"><img class="img-fluid"
+      <div class="col-md-4"><a class="category-item mb-4" ><img class="img-fluid"
             src="assets/img/cat-img-2.jpg" alt="" /><strong class="category-item-title">Shoes</strong></a><a
-          class="category-item" href="shop.html"><img class="img-fluid" src="assets/img/cat-img-3.jpg" alt="" /><strong
+          class="category-item"><img class="img-fluid" src="assets/img/cat-img-3.jpg" alt="" /><strong
             class="category-item-title">Watches</strong></a>
       </div>
-      <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="assets/img/cat-img-4.jpg"
+      <div class="col-md-4"><a class="category-item"><img class="img-fluid" src="assets/img/cat-img-4.jpg"
             alt="" /><strong class="category-item-title">Electronics</strong></a>
       </div>
     </div>
   </section>
   <!-- TRENDING PRODUCTS-->
-  <section class="py-5">
+  <section class="py-5" *ngIf="products.length>0">
     <header>
       <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
       <h2 class="h5 text-uppercase mb-4">Top trending products</h2>
     </header>
     <div class="row">
       <!-- PRODUCT-->
+      
       <div  *ngFor="let product of products; index as i;"  class="col-xl-3 col-lg-4 col-sm-6">
         <div class="product text-center">
           <div class="position-relative mb-3">
-            <div class="badge text-white bg-"></div><a class="d-block" routerLink="product/{{product.id}}"><img class="img-fluid w-100"
-              [src]="product.photos[0]" [alt]="product.name"></a>
-            <div class="product-overlay">
-              <ul class="mb-0 list-inline">
-                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                      class="far fa-heart"></i></a></li>
-                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a>
-                </li>
-                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"  href="#productView"
-                    data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li>
-              </ul>
-            </div>
+            <div class="badge text-white bg-"></div><a class="d-block" routerLink="/user/product/{{product._id}}"><img class="img-fluid w-100"
+              [src]="product.photos[0]?product.photos[0]:'assets/img/product-1.jpg'" [alt]="product.name"></a>
+            
           </div>
           <h6> <a class="reset-anchor">{{product.name}}</a></h6>
           <p class="small text-muted">${{product.price}}</p>

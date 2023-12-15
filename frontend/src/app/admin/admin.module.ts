@@ -44,6 +44,11 @@ import { AdminAddCategoryComponent } from './components/admin-add-category/admin
 import { CategoriesService } from './services/categories.service';
 import { AdminAddProductComponent } from './components/admin-add-product/admin-add-product.component';
 import { ProductsService } from './services/products.service';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditProductsComponent } from './components/edit-products/edit-products.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +65,8 @@ import { ProductsService } from './services/products.service';
     AdminCategoriesComponent,
     AdminAddCategoryComponent,
     AdminAddProductComponent,
+    EditProductsComponent,
+    EditUsersComponent,
   ],
   imports: [
     CommonModule,
@@ -87,6 +94,9 @@ import { ProductsService } from './services/products.service';
     MatPaginatorModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
+    NgxMatFileInputModule,
+    MatDialogModule,
   ],
   providers: [AuthService, ToastService, CategoriesService, ProductsService],
 })

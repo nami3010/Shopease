@@ -7,6 +7,7 @@ const MSG = require('../constants/index').messages;
 var fs = require('fs')
 var path = require('path')
 var multer = require('multer');
+
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, './img');
@@ -24,6 +25,38 @@ var upload = multer({
     }
 
 }).array('img', 5);
+
+var  addFoodItem = async (prodObj) => {
+
+    console.log('insid add food item in util js')
+    try{
+        let imgResult;
+        console.log("foodObj is--->",prodObj.file);
+        if(prodObj.file){
+            imgResult = await this.cloudinary.uploadImage(prodObj);
+        }
+      
+       
+        console.log('image-- result', imgResult)
+        // const {name,cookTime,price,resturant,categories} = prodObj.body;
+
+        // const foodItem = {
+        //     name,
+        //     cookTime,
+        //     price: +price,
+        //     resturant: new ObjectId(resturant),
+        //     categories: categories.split(","),
+        //     image : imgResult ? imgResult.url : '',
+        //     isDisabled: false
+        //   }
+      
+        //   const fItem = await FoodModel.create(foodItem);
+        //   return fItem;
+    }catch(err){
+        console.log("Error in creating food item isss--->",err);
+        throw err;
+    }
+}
 
 
 
@@ -129,5 +162,6 @@ module.exports = {
     decodeToken,
     // verifyUsrToken,
     upload,
-    checkFileType
+    checkFileType,
+    addFoodItem
 }
