@@ -12,7 +12,7 @@ var ProductSchema = new schema({
     isDeleted: { type: Boolean, default: false },
     category: { type: mongoose.Types.ObjectId, ref: schemaName.category },
     description: { type: String, required: true },
-    photos: [String],
+    photos: { type: String } ,
     price:{type:Number},
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users },
     updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: schemaName.users }

@@ -1,21 +1,26 @@
 const code = require('../constants').http_codes;
 const msg = require('../constants').messages;
-const productdao = require('./productDao')
-const util = require('../app util/util')
+const productdao = require('./productDao');
+const util = require('../app util/util');
 
 
-function add(req, res) {
+add=async (req, res)=> {
+    
     let token = req.headers['authorization']
     console.log("🚀 ~ file: productService.js:9 ~ add ~ token:", token)
+    console.log("🚀 ~ file: productService.js:9 ~ req ~ token:", req)
+
     let obj = util.decodeToken(token)
     req.body.createdBy = obj.id;
-    const data = req.body
-    return productdao.create(data).then((result) => {
-        res.json({ code: code.ok, result: result })
-
-    }).catch((err) => {
-        res.json({ code: code.internalError, message: err })
-    })
+    const data = req.body;
+    console.log("data is---->",typeof(data));
+    const result = await productdao.create(data);
+        console.log("success result is---->",result);
+        //res.json({ code: code.ok, result: result })
+        if(result){
+            res.json({ code: code.ok, data: result })
+          }
+    
 }
 
 function list(req, res) {
@@ -83,5 +88,6 @@ module.exports = {
     list,
     edit,
     deleteProduct,
-    getByCatId
+    getByCatId,
+    getById
 }

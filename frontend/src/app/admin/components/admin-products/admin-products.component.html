@@ -1,3 +1,4 @@
+<h1>List of all Products</h1>
 <mat-form-field class="filter-input">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -33,7 +34,7 @@
         <!-- Edit Column -->
         <ng-container matColumnDef="edit">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
-            <td mat-cell *matCellDef="let row"> 
+            <td mat-cell *matCellDef="let row" (click)="editProduct(row)"> 
                 <button mat-icon-button color="primary">
                     <mat-icon>edit</mat-icon>
                 </button> 

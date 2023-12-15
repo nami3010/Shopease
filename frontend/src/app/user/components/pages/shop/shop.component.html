@@ -1,3 +1,5 @@
+<app-custom-toaster></app-custom-toaster>
+
 <!--  Modal -->
 <div class="modal fade" id="productView" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -51,15 +53,17 @@
     </div>
 </div>
 
+
 <div class="row height d-flex justify-content-center align-items-center mb-3">
     <div class="col-md-6">
-      <div class="search-form">
-        <i class="fa fa-search"></i>
-        <input #s type="text" class="form-control search-form-input" placeholder="Search anything..." (keyup.enter)="search(s.value)">
-        <span class="left-pan"><i class="fa fa-microphone"></i></span>
-      </div>
+        <div class="search-form">
+            <i class="fa fa-search"></i>
+            <input #s type="text" class="form-control search-form-input" placeholder="Search anything..."
+                (keyup.enter)="search(s.value)">
+            <span class="left-pan"><i class="fa fa-microphone"></i></span>
+        </div>
     </div>
-  </div>
+</div>
 <div class="container">
     <!-- HERO SECTION-->
     <section class="py-5 bg-light">
@@ -83,11 +87,12 @@
         <div class="container p-0">
             <div class="row">
                 <!-- SHOP SIDEBAR-->
-                <div class="col-lg-3 order-2 order-lg-1">
+                <div class="col-lg-3 order-2 order-lg-1 categories">
                     <h5 class="text-uppercase mb-4">Categories</h5>
                     <ul *ngFor="let category of categories"
                         class="list-unstyled small text-muted ps-lg-4 font-weight-normal">
-                        <li class="mb-2"><a class="reset-anchor" href="#!">{{category.name}}</a></li>
+                        <li class="mb-2"><a class="reset-anchor"
+                                (click)="getProductsByCategory(category._id)">{{category.name}}</a></li>
                     </ul>
 
                 </div>
@@ -104,7 +109,8 @@
                                 <li class="list-inline-item text-muted me-3"><a class="reset-anchor p-0" href="#!"><i
                                             class="fas fa-th"></i></a></li>
                                 <li class="list-inline-item">
-                                    <select class="selectpicker form-select form-select-md mb-3 form-control form-control-lg"
+                                    <select
+                                        class="selectpicker form-select form-select-md mb-3 form-control form-control-lg"
                                         aria-label=".form-select-lg example">
                                         <option selected>Open this select menu</option>
                                         <option value="1">One</option>
@@ -123,13 +129,14 @@
                                 <div class="position-relative mb-3">
                                     <div class="badge text-white bg-"></div><a class="d-block"
                                         routerLink="/user/product/{{product._id}}"><img class="img-fluid w-100"
-                                            [src]="product.photos[0]?product.photos[0]:'assets/img/product-1.jpg'" [alt]="product.name"></a>
+                                            [src]="product.photos?product.photos:'assets/img/product-1.jpg'"
+                                            [alt]="product.name"></a>
                                     <div class="product-overlay">
                                         <ul class="mb-0 list-inline">
                                             <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark"
                                                     href="#!"><i class="far fa-heart"></i></a></li>
                                             <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                    routerLink="/user/cart">Add to cart</a>
+                                                    (click)="addtoCart(product)">Add to cart</a>
                                             </li>
                                             <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
                                                     href="#productView" data-bs-toggle="modal"><i
