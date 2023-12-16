@@ -1,6 +1,6 @@
 <app-custom-toaster></app-custom-toaster>
 <div class="page-holder bg-light">
-
+<!-- {{product|json}} -->
   <!--  Modal -->
   <div class="modal fade" id="productView" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -64,7 +64,7 @@
               <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active swiper-slide h-auto" data-bs-interval="10000">
-                    <img src="assets/img/product-detail-1.jpg" class="d-block w-100" alt="...">
+                    <img src="{{product.photos}}" class="d-block w-100" alt="...">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"

@@ -23,6 +23,8 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { ProductsService } from './services/products.service';
 import { UserAboutusComponent } from './components/pages/user-aboutus/user-aboutus.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
+import { PaymentConfirmationComponent } from './components/payment-confirmation/payment-confirmation.component';
 
 
 
@@ -41,7 +43,9 @@ import { CheckoutComponent } from './components/pages/checkout/checkout.componen
     CustomToasterComponent,
     CartComponent,
     UserAboutusComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PaymentGatewayComponent,
+    PaymentConfirmationComponent
   ],
   imports: [
     CommonModule,
