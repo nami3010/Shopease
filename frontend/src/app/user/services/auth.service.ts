@@ -1,6 +1,8 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { API_BASE_URL } from '../../utils/constants';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,7 @@ export class AuthService {
 
   register(user: any): Observable<any[]> {
     return this.http
-      .post<any[]>('http://localhost:8000/user/signup', user)
+      .post<any[]>(API_BASE_URL+'/user/signup', user)
       .pipe(
         tap((res: any) => {
           if (res.code == 200) {
@@ -24,7 +26,7 @@ export class AuthService {
   }
 
   login(user: any): Observable<any[]> {
-    return this.http.post<any[]>('http://localhost:8000/user/login', user).pipe(
+    return this.http.post<any[]>(API_BASE_URL+'/user/login', user).pipe(
       tap((res: any) => {
         if (res.code == 200) {
           localStorage.setItem('amazon_user', JSON.stringify(res));
