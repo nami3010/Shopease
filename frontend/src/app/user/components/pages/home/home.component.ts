@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../../../services/products.service';
 import { Product } from '../../../shared/models/Product';
+import { Helmet } from 'react-helmet'; 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
+
 export class HomeComponent implements OnInit {
   products: any = [];
   categories: any[] = [];

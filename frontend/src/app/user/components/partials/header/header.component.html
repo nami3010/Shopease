@@ -2,7 +2,7 @@
 <header class="header bg-white">
   <div class="container px-lg-3">
     <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="index.html"><img
-          class="logo" src="assets/img/logo.png" /><span class="fw-bold text-uppercase text-dark">EASYSHOP</span></a>
+          class="logo" src="assets/img/logo.png" alt="applogo" /><span class="fw-bold text-uppercase text-dark">EASYSHOP</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,23 +21,23 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" routerLink="/user/cart"> <i
-                class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(2)</small></a>
+                class="fas fa-dolly-flatbed me-1 text-gray" role="presentation"></i>Cart<small class="text-gray fw-normal">(2)</small></a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small
+          <li class="nav-item"><a class="nav-link" href="#!"> <i class="" role="button"></i><small
                 class="text-gray fw-normal"> (0)</small></a></li>
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#"
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" role="button" href="#"
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
             <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown">
               <a class="dropdown-item border-0 transition-link"
                 *ngIf="!(loggedIn || (authenticationService.loggedIn$|async))" routerLink="/user/login"> <i
-                  class="fas fa-sign-in-alt me-1 text-gray fw-bold"></i>Login</a>
+                  class="fas fa-sign-in-alt me-1 text-gray fw-bold" role="presentation"></i>Login</a>
               <a *ngIf="loggedIn || (authenticationService.loggedIn$|async)" (click)="logout()"
                 class="dropdown-item border-0 transition-link"><i
                   class="fas fa-sign-out-alt  me-1 text-gray fw-bold"></i>Logout</a>
               <a class="dropdown-item border-0 transition-link" routerLink="/user/register"> <i
-                  class="fa fa-user-plus me-1 text-gray fw-bold"></i>Register</a>
+                  class="fa fa-user-plus me-1 text-gray fw-bold" role="presentation"></i>Register</a>
               <a class="dropdown-item border-0 transition-link" routerLink="/admin"> <i
-                  class="fas fa-user me-1 text-gray fw-normal"></i>Admin</a>
+                  class="fas fa-user me-1 text-gray fw-normal" role="presentation"></i>Admin</a>
             </div>
           </li>
         </ul>
