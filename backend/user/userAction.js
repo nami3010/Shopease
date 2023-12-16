@@ -40,6 +40,9 @@ function updateCart(req, res,next) {
 function emptyCart(req, res,next) {
     service.emptyCart(req, res,next)
 }
+function Successpayment(req, res,next) {
+    service.Successpayment(req, res,next)
+}
 module.exports={
     login,
     signup,
@@ -53,5 +56,6 @@ module.exports={
     uploadPhoto,
     getfromcart,
     updateCart,
-    emptyCart
+    emptyCart,
+    Successpayment
 }

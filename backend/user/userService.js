@@ -219,6 +219,15 @@ function emptyCart(req,res){
         res.json({ code: code.internalError, message: err })
     })
 }
+function Successpayment(req,res){
+  
+ try{
+    res.json({ code: code.ok,message:"Payment successfull!" })
+ }
+ catch{
+    res.json({ code: code.internalError, message: "Internal Server error" })
+ }
+}
 module.exports={
     login,
     signup,
@@ -232,5 +241,6 @@ module.exports={
     uploadPhoto,
     getfromcart,
     updateCart,
-    emptyCart
+    emptyCart,
+    Successpayment
 }

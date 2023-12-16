@@ -57,6 +57,10 @@ userRouter.route('/process-payment')
 .post([], (req, res) => {
     actions.payment(req, res)
 });
+userRouter.route('/success-payment')
+.post([], (req, res) => {
+    actions.Successpayment(req, res)
+});
 userRouter.route('/uploadPhoto')
     .post([], (req, res) => {
         actions.uploadPhoto(req, res)
