@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from '../../../services/toast.service';
 import { AuthService } from '../../../services/auth.service';
 import { TOAST_ICONS, TOAST_STATE } from '../../../shared/constants/constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -28,7 +29,8 @@ export class CheckoutComponent implements OnInit {
     private http: HttpClient,
     private prodService: ProductsService,
     private formBuilder: FormBuilder,
-    public toast: ToastService
+    public toast: ToastService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -114,6 +116,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   placeOrder(){
-    console.log(this.checkoutForm.value)
+    sessionStorage.setItem('cart-total',this.cartTotal);
+    this.router.navigateByUrl('/user/payment-gateway');
   }
 }

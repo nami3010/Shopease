@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { CartComponent } from './components/pages/cart/cart.component';
 import { UserAboutusComponent } from './components/pages/user-aboutus/user-aboutus.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
+import { PaymentConfirmationComponent } from './components/payment-confirmation/payment-confirmation.component';
 
 const routes: Routes = [
   {
@@ -27,10 +29,15 @@ const routes: Routes = [
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'about-us', component: UserAboutusComponent },
+      { path: 'payment-gateway', component: PaymentGatewayComponent },
+      { path: 'payment-confirmation', component: PaymentConfirmationComponent },
       {
         path: '',
         redirectTo: '/user/home',
         pathMatch: 'full',
+      },
+      {
+        path: 'user/home',component:HomeComponent
       },
     ],
   },
