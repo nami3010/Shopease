@@ -8,6 +8,7 @@ import { API_BASE_URL } from '../../utils/constants';
   providedIn: 'root',
 })
 export class AuthService {
+  transactionIdPayment!:any;
   loggedInSubject = new BehaviorSubject<boolean>(false);
   loggedIn$ = this.loggedInSubject.asObservable();
 

@@ -11,7 +11,7 @@ import { TOAST_ICONS, TOAST_STATE } from '../../../shared/constants/constants';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product: any = { name: '', price: 0, description: '' };
+  product: any = [];
   quantity: number = 1;
 
   constructor(
@@ -27,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
         this.productService.getProductsById(params.id).subscribe((res: any) => {
           this.product = res
             ? res.data
-            : { name: '', price: 0, description: '' };
+            : [];
         });
       }
     });

@@ -44,6 +44,10 @@ export class ShopComponent implements OnInit {
 
   getProductsByCategory(catId: string) {
     console.log(catId);
+    if(catId == '657d3aad4f78a6392c9cd69d'){
+      this.loadAllProducts();
+    }
+
     this.productService
       .getProductsByCategory(catId)
       .subscribe((products: any) => {

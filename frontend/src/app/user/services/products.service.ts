@@ -169,5 +169,13 @@ export class ProductsService {
     }
   }
 
+  clearCart(){
+    return this.http.get<any[]>(API_BASE_URL+'/user/emptyCart',{headers:this.httpOptions.headers});
+  }
+
+  storeTransactionDetails(){
+    return this.http.post<any[]>(API_BASE_URL+'/user/success-payment',{headers:this.httpOptions.headers});
+  }
+
   getAllCountries() {}
 }
