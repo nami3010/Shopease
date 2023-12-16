@@ -10,6 +10,8 @@ import {
   TOAST_ICONS,
   TOAST_STATE,
 } from '../../user/shared/constants/constants';
+import { API_BASE_URL } from '../../utils/constants';
+
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +36,7 @@ export class ProductsService {
   constructor(private http: HttpClient, public toast: ToastService) {}
 
   getAllProducts(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8000/product/list');
+    return this.http.get<any[]>(API_BASE_URL+'/product/list');
   }
 
   getAllPrductsBySearch(searchTerm: string): Observable<any[]> {
@@ -53,17 +55,17 @@ export class ProductsService {
 
   getProductsById(productId: string): any {
     return this.http.get<any[]>(
-      'http://localhost:8000/product/get/' + productId
+      API_BASE_URL+'/product/get/' + productId
     );
   }
 
   getAllCategories(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8000/category/list');
+    return this.http.get<any[]>(API_BASE_URL+'/category/list');
   }
 
   getProductsByCategory(categoryId: string) {
     return this.http
-      .get<any[]>('http://localhost:8000/product/getByCat/' + categoryId)
+      .get<any[]>(API_BASE_URL+'/product/getByCat/' + categoryId)
       .pipe(
         catchError((error) => {
           console.log(error);
@@ -92,7 +94,7 @@ export class ProductsService {
       count: count,
     };
     return this.http
-      .post<any[]>('http://localhost:8000/user/addToCart', cartItem, {
+      .post<any[]>(API_BASE_URL+'/user/addToCart', cartItem, {
         headers: this.httpOptions.headers,
       })
       .pipe(
@@ -109,14 +111,14 @@ export class ProductsService {
   }
 
   getAllCartItems() {
-    return this.http.get<any[]>('http://localhost:8000/user/getfromCart', {
+    return this.http.get<any[]>(API_BASE_URL+'/user/getfromCart', {
       headers: this.httpOptions.headers,
     });
   }
 
   deleteCartItemUSer(prodId: any) {
     return this.http.post<any[]>(
-      'http://localhost:8000/user/removefromCart',
+      API_BASE_URL+'/user/removefromCart',
       { productId: prodId },
       {
         headers: this.httpOptions.headers,
@@ -138,7 +140,7 @@ export class ProductsService {
     console.log('cartObj', cartObj);
 
     return this.http.post<any[]>(
-      'http://localhost:8000/user/updateCart',
+      API_BASE_URL+'/user/updateCart',
       cartObj,
       {
         headers: this.httpOptions.headers,

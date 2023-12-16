@@ -5,6 +5,7 @@ import { Category } from '../models/category';
 import { HttpHeaders } from '@angular/common/http';
 import { ToastService } from '../../user/services/toast.service';
 import { TOAST_ICONS, TOAST_STATE } from '../../user/shared/constants/constants';
+import { API_BASE_URL } from '../../utils/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class CategoriesService {
   constructor(private http: HttpClient,public toast: ToastService) {}
 
   getAllCategories(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8000/category/list');
+    return this.http.get<any[]>(API_BASE_URL+'/category/list');
   }
 
   addCategory(catObj: Category): Observable<any[]> {
@@ -28,7 +29,7 @@ export class CategoriesService {
       observe: 'response',
     };
 
-    return this.http.post<any[]>('http://localhost:8000/category/add', catObj, {
+    return this.http.post<any[]>(API_BASE_URL+'/category/add', catObj, {
       headers:httpOptions.headers
     }).pipe(
       catchError((error) => {
