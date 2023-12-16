@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product';
 
-
+import { API_BASE_URL } from '../../utils/constants';
 
 
 @Injectable({
@@ -30,17 +30,17 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8000/product/list');
+    return this.http.get<any[]>(API_BASE_URL+'/product/list');
   }
 
   addProduct(catObj: any): Observable<any[]> {
-    return this.http.post<any[]>('http://localhost:8000/product/add', catObj, {
+    return this.http.post<any[]>(API_BASE_URL+'/product/add', catObj, {
       headers: this.httpOptions1.headers,
     });
   }
 
   getUSers(){
-    return this.http.get<any[]>('http://localhost:8000/user/list',{headers:this.httpOptions.headers});
+    return this.http.get<any[]>(API_BASE_URL+'/user/list',{headers:this.httpOptions.headers});
   }
 
   /*

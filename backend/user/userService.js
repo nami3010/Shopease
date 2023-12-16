@@ -179,7 +179,7 @@ function uploadPhoto(req, res) {
 function getfromcart(req, res) {
     let token = req.headers['authorization']
     let obj = util.decodeToken(token)
-    userdao.findOne({ _id: obj.id }
+    userdao.findOnePop({ _id: obj.id }
             ).then((result) => {
                 res.json({ code: code.ok,data:result.cart })
             })

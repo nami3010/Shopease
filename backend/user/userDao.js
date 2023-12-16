@@ -15,6 +15,13 @@ function findOne(query){
         return result; 
     })
 }
+function findOnePop(query){
+    console.log("query",query)
+    return userDao.findOne(query,).then((result)=>{
+        console.log("result============>",result.cart)
+        return result; 
+    })
+}
 function find(query){
     return userDao.find(query,).then((result)=>{
         return result; 
@@ -35,5 +42,6 @@ module.exports = {
     findOne,
     findOneAndUpdate,
     remove,
-    find
+    find,
+    findOnePop
 }
