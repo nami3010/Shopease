@@ -1,0 +1,22 @@
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 30px;
+  }
+
+  .prod-card{
+    background-color: azure;
+  }
+
+  .cust-card{
+    background-color: beige;
+  }
+
+  .cat-card{
+    background-color: aquamarine;
+  }
+
+  .order-card{
+    background-color: khaki;
+  }

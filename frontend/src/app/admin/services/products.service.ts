@@ -43,6 +43,10 @@ export class ProductsService {
     return this.http.get<any[]>(API_BASE_URL+'/user/list',{headers:this.httpOptions.headers});
   }
 
+  getAllCategories(): Observable<any[]> {
+    return this.http.get<any[]>(API_BASE_URL+'/category/list');
+  }
+
   /*
   {
     "name":"Automotive and Tools",

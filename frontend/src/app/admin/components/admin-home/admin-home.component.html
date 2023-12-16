@@ -1,11 +1,34 @@
-
-<p class="container">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ultrices tortor. Fusce sollicitudin semper lacus, eu ultricies nisi tristique eu. Sed quis tortor leo. Phasellus tristique lacus diam, id porttitor justo ornare ut. Phasellus lacinia finibus sem sed lobortis. Donec malesuada, tellus eget commodo faucibus, urna nisl condimentum turpis, ut egestas metus orci ut enim. Aliquam molestie risus sed pretium pellentesque. Donec bibendum ipsum in rhoncus elementum. Donec ut sem scelerisque, cursus nunc ut, dictum arcu. Duis ac bibendum lorem.
-
-Nulla dignissim, leo a posuere porta, ante mauris accumsan leo, finibus laoreet justo nisl eu eros. Nunc dapibus mauris sed felis dapibus, ut posuere turpis iaculis. Ut ultricies mi in dolor laoreet, vel tempus magna mollis. Nullam nibh risus, euismod a vestibulum in, tincidunt in felis. Suspendisse mauris felis, rhoncus nec libero id, iaculis vulputate velit. Quisque a dolor nec leo vehicula posuere. Vivamus iaculis justo eros.
-
-Suspendisse bibendum, mauris nec aliquam aliquet, sem erat eleifend leo, in sollicitudin magna libero eu eros. Sed posuere, quam vel tempus venenatis, lectus lacus convallis justo, ac feugiat ante mi nec ante. Maecenas efficitur feugiat nisi a hendrerit. Phasellus in facilisis felis. Curabitur rhoncus lacinia mollis. Pellentesque ullamcorper ligula quis libero molestie elementum. Donec a lectus pharetra, tempus sem lacinia, laoreet velit. Aliquam eu dapibus lorem. Maecenas sollicitudin nulla vitae urna imperdiet, in molestie eros suscipit.
-
-Sed varius, leo ac fringilla congue, arcu tortor ullamcorper nisl, et interdum nisi neque quis sapien. Sed blandit euismod neque ac aliquam. Praesent eu dolor vitae odio suscipit blandit vel nec sem. Nunc consectetur sodales risus, id congue neque imperdiet nec. In molestie porta erat nec efficitur. Sed in placerat dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam porttitor consectetur magna vitae consectetur. Quisque luctus, nisi eu condimentum tincidunt, risus tortor mollis lacus, sit amet porta urna lacus sit amet arcu. In hac habitasse platea dictumst. Suspendisse lectus quam, pellentesque non mollis non, iaculis eu sem. Maecenas in est eros. In molestie molestie ex ac malesuada.
-
-Curabitur laoreet, urna ac faucibus aliquam, nisi magna iaculis arcu, sed dignissim nisl tortor eu ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In eu nisi turpis. Duis non lectus luctus, ultricies neque in, pulvinar massa. Curabitur posuere arcu dapibus eros viverra tincidunt. Sed mollis molestie bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et ultrices justo. Pellentesque euismod vulputate congue. Aliquam et dui vulputate, tempor massa nec, dignissim leo. Nulla felis lorem, aliquam a diam non, suscipit vehicula risus. Sed nec sodales lacus.
-</p>
+<div class="container card-wrapper">
+    <mat-card class="prod-card">
+        <mat-card-header>
+          <mat-card-title>Products</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h1>{{products.length}}</h1>
+          </mat-card-content>
+      </mat-card>
+      <mat-card class="cust-card">
+        <mat-card-header>
+          <mat-card-title>Customers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h1>{{categories.length}}</h1>
+          </mat-card-content>
+      </mat-card>
+      <mat-card class="cat-card">
+        <mat-card-header>
+          <mat-card-title>Categories</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h1>{{users.length}}</h1>
+          </mat-card-content>
+      </mat-card>
+      <mat-card class="order-card">
+        <mat-card-header>
+          <mat-card-title>Orders</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h1>{{products.length}}</h1>
+          </mat-card-content>
+      </mat-card>
+    </div>

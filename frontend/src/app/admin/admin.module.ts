@@ -49,6 +49,7 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditProductsComponent } from './components/edit-products/edit-products.component';
 import { EditUsersComponent } from './components/edit-users/edit-users.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { EditUsersComponent } from './components/edit-users/edit-users.component
     MatSelectModule,
     NgxMatFileInputModule,
     MatDialogModule,
+    MatCardModule
   ],
   providers: [AuthService, ToastService, CategoriesService, ProductsService],
 })

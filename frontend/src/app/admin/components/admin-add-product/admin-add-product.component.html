@@ -30,14 +30,14 @@
                         Photo is required
                     </mat-error> -->
 
-                    <!-- <mat-form-field appearance="outline"> -->
+                    <mat-form-field appearance="outline">
                         <mat-label>Photo</mat-label>
-                        <!-- <ngx-mat-file-input [accept]='accept' formControlName="photo">
-                        </ngx-mat-file-input> -->
-                        <input type="file" class="custom-file-input" id="photo" formControlName="photo" (change)="handleFileInput($event)">
-                        <label class="custom-file-label" for="photo">{{fileToUpload ? fileToUpload.name : "Choose File"}}</label>
+                        <ngx-mat-file-input [accept]='accept' formControlName="photo">
+                        </ngx-mat-file-input>
+                        <!-- <input type="file" class="custom-file-input" id="photo" formControlName="photo" (change)="handleFileInput($event)">
+                        <label class="custom-file-label" for="photo">{{fileToUpload ? fileToUpload.name : "Choose File"}}</label> -->
                         <mat-hint>Image files</mat-hint>
-                      <!-- </mat-form-field> -->
+                      </mat-form-field>
                       <mat-error *ngIf="catForm.controls.photo.touched && catForm.controls.photo.errors?.required">
                         Photo is required
                     </mat-error>

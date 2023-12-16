@@ -96,7 +96,7 @@ handleFileInput(event: any) {
     formData.append('name', this.catForm.controls.name.value);
     formData.append('price', this.catForm.controls.price.value);
     formData.append('email', 'mohit@gmail.com');
-    formData.append('photo', this.fileToUpload);
+    formData.append('photo', this.catForm.controls.photo.value);
     formData.append('category', this.catForm.controls.category.value);
     formData.append('description', this.catForm.controls.description.value);
 
