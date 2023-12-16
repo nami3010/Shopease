@@ -49,6 +49,10 @@ userRouter.route('/getfromCart')
 .get([], (req, res) => {
     actions.getfromcart(req, res)
 });
+userRouter.route('/emptyCart')
+.get([], (req, res) => {
+    actions.emptyCart(req, res)
+});
 userRouter.route('/process-payment')
 .post([], (req, res) => {
     actions.payment(req, res)

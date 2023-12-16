@@ -202,6 +202,23 @@ function updateCart(req,res){
         res.json({ code: code.internalError, message: err })
     })
 }
+function emptyCart(req,res){
+    let token = req.headers['authorization']
+    let obj = util.decodeToken(token)
+    req.body.updatedBy = obj.id;
+  console.log("obj",obj)
+    
+   const options = { new: true };
+    const query = { _id: obj.id };
+  const update = { $set: { 'cart': []} };
+            return userdao.findOneAndUpdate(query,update,options).then((result) => {
+                console.log("result",result)
+                res.json({ code: code.ok, result:result })
+        
+    }).catch((err) => {
+        res.json({ code: code.internalError, message: err })
+    })
+}
 module.exports={
     login,
     signup,
@@ -214,5 +231,6 @@ module.exports={
     removefromcart,
     uploadPhoto,
     getfromcart,
-    updateCart
+    updateCart,
+    emptyCart
 }

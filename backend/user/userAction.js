@@ -37,6 +37,9 @@ function getfromcart(req, res,next) {
 function updateCart(req, res,next) {
     service.updateCart(req, res,next)
 }
+function emptyCart(req, res,next) {
+    service.emptyCart(req, res,next)
+}
 module.exports={
     login,
     signup,
@@ -49,5 +52,6 @@ module.exports={
     removefromcart,
     uploadPhoto,
     getfromcart,
-    updateCart
+    updateCart,
+    emptyCart
 }
